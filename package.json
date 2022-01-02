@@ -1,0 +1,17 @@
+{
+  "name": "hw-website",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.7.6"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "three": "^0.136.0"
+  }
+}
