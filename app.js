@@ -6,10 +6,10 @@ var path = require('path');
 app.use(express.static("public"))
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
     // res.send("<h1>Hello World</h1>");
 });
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 4000, function () {
     console.log('Node app is working!');
 });

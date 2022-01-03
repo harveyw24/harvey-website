@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node app.js",
-    "dev": "vite",
-    "preview": "vite preview"
+    "dev": "vite public",
+    "build": "vite build public",
+    "preview": "vite preview public"
   },
   "devDependencies": {
-    "vite": "^2.7.6"
+    "vite": "^2.7.10"
   },
   "dependencies": {
     "express": "^4.17.2",
