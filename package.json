@@ -4,7 +4,6 @@
   "scripts": {
     "start": "node app.js",
     "dev": "vite public",
-    "build": "vite build public",
     "preview": "vite preview public"
   },
   "devDependencies": {
