@@ -11,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -42,7 +44,7 @@
       <h1 class="section__title section__title--intro">
         Hi, I am <strong>Harvey Wang</strong>
       </h1>
-      <p class="section__subtitle section__subtitle--intro">2nd year CS undergrad</p>
+      <p class="section__subtitle section__subtitle--intro">CS undergrad @ Princeton</p>
       <img src="img/harvey_bg_cropped.png" alt="a picture of Harvey smiling" class="intro__img">
     </section>
 
@@ -50,76 +52,50 @@
     <!-- Skills -->
     <section class="my-skills" id="skills">
       <h2 class="section__title section__title--skills">Skills</h2>
-      <!--
-      <div class="experiences">
-        <div class="experience">
-          <h3>TrueToForm - Software Engineering Intern (Winter 2021 - present)</h3>
-          <p>TrueToForm is a startup using smartphones to produce accurate 3D avatars for apparel design.</p>
-          <ul class="section__list">
-            <li class="section__item">
-              Improved scan review process by adding initial 3D point cloud visualization
-            </li>
-            <li class="section__item">
-              Generated custom analytics reports using to monitor app usage metrics
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience">
-          <h3>ES Systems - Software Engineering Intern (Summer 2021)</h3>
-          <p>ES Systems is a microsensor manufacturing company based in Athens, Greece.</p>
-          <ul class="section__list">
-            <li class="section__item">
-              Produced data processing pipeline for raw vibration data from accelerometers placed on motors
-            </li>
-            <li class="section__item">
-              Extracted features for a predictive model to forecast and avoid machinery failure
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience">
-          <h3>Princeton University - Course Assistant (Jan 2021 - present)</h3>
-          <p>COS 226: Algorithms and Data Structures</p>
-          <ul class="section__list">
-            <li class="section__item">
-              Hosted weekly office hours to assist students with programming assignments
-            </li>
-            <li class="section__item">
-              Answered questions and facilitated student discussion at weekly precepts
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience">
-          <h3>The Coding School - Programming Tutor</h3>
-          <p>The Coding School is a non-profit providing accessible computer science education to students around the world.</p>
-          <ul class="section__list">
-            <li class="section__item">
-              Tutored student in 1-on-1 lessons on introductory Python
-            </li>
-            <li class="section__item">
-              Taught JavaScript to class of 15 students for Creative Tech Camp
-            </li>
-          </ul>
-        </div>
-      </div> -->
-
+      
       <div class="skills">
-        <ul class="skills__list">
-          <li>Python</li>
-          <li>Java</li>
-          <li>C</li>
-          <li>R</li>
-          <li>MATLAB</li>
-          <li>SQL</li>
-          <li>JavaScript</li>
-          <li>HTML/CSS</li>
-          <li>Firebase</li>
-          <li>Open3D</li>
-          <li>Swift</li>
-          <li>Git</li>
-        </ul>
+        <div class="skills__name"></div>
+        <div class="skills__grid">
+          <div class="skills__circle circle-python" data-text="Python" data-color="rgba(255,207,63,1)">
+            <img src="icons/python.svg" alt="python icon" class="skills__icon icon-python">
+          </div>
+          <div class="skills__circle circle-java" data-text="Java" data-color="rgba(226,49,48,1)">
+            <img src="icons/java.svg" alt="java icon" class="skills__icon icon-java">
+          </div>
+          <div class="skills__circle circle-c" data-text="C" data-color="rgba(2,89,156,1)">
+            <img src="icons/c.svg" alt="c icon" class="skills__icon icon-c">
+          </div>
+          <div class="skills__circle circle-r" data-text="R" data-color="rgba(33,101,182,1)">
+            <img src="icons/r.svg" alt="r icon" class="skills__icon icon-r">
+          </div>
+          <div class="skills__circle circle-html" data-text="HTML" data-color="rgba(228,77,38,1)">
+            <img src="icons/html5.svg" alt="html icon" class="skills__icon icon-html">
+          </div>
+          <div class="skills__circle circle-css" data-text="CSS" data-color="rgba(18,114,182,1)">
+            <img src="icons/css3.svg" alt="css icon" class="skills__icon icon-css">
+          </div>
+          <div class="skills__circle circle-javascript" data-text="JavaScript" data-color="rgba(240,191,46,1)">
+            <img src="icons/javascript.svg" alt="javascript icon" class="skills__icon icon-javascript">
+          </div>
+          <div class="skills__circle circle-node-js" data-text="NodeJS" data-color="rgba(132,203,44,1)">
+            <img src="icons/node-js.svg" alt="node-js icon" class="skills__icon icon-node-js">
+          </div>
+          <div class="skills__circle circle-matlab" data-text="MATLAB" data-color="rgba(157,65,206,1)">
+            <img src="icons/matlab.svg" alt="matlab icon" class="skills__icon icon-matlab">
+          </div>
+          <div class="skills__circle circle-postgresql" data-text="SQL" data-color="rgba(50,103,145,1)">
+            <img src="icons/postgresql.svg" alt="postgresql icon" class="skills__icon icon-postgresql">
+          </div>
+          <div class="skills__circle circle-git" data-text="Git" data-color="rgba(243,79,41,1)">
+            <img src="icons/git.svg" alt="git icon" class="skills__icon icon-git">
+          </div>
+          <div class="skills__circle circle-swift" data-text="Swift" data-color="rgba(255,87,38,1)">
+            <img src="icons/swift.svg" alt="swift icon" class="skills__icon icon-swift">
+          </div>
+          <div class="skills__circle circle-firebase" data-text="Firebase" data-color="rgba(251,202,63,1)">
+            <img src="icons/firebase.svg" alt="firebase icon" class="skills__icon icon-firebase">
+          </div>
+        </div>
       </div>
 
       <div class="courses">
@@ -143,11 +119,30 @@
 
       <div class="about-me__body">
         <p>
-          I am a 2nd year undergraduate studying computer science at Princeton University. I am currently interning at TrueToForm, a startup using smartphone cameras to produce 3D avatars for apparel design. I also have been a course assistant for the Algorithms and Data Structures course since January 2021. I have previously worked as an intern for ES Systems (Athens, Greece) and as a programming tutor for The Coding School.
+          I am a 2nd year undergraduate studying computer science at Princeton University.
+        </p>
+
+        <ul class="experiences">
+          <li class="experience">
+            <p><strong>Intern at TrueToForm</strong> (Winter 2021 - present)</p>
+          </li>
+          <li class="experience">
+            <p><strong>Course Assistant for Algorithms and Data Structures</strong> (Jan 2021 - present)</p>
+          </li>
+          <li class="experience">
+            <p><strong>Intern at ES Systems</strong> (Summer 2021)</p>
+          </li>
+          <li class="experience">
+            <p><strong>Programming Tutor at The Coding School</strong> (Summer 2020)</p>
+          </li>
+        </ul>
+
+        <p>
+          My favorite topics in computer science include deep learning, computer vision, and computational biology.
         </p>
 
         <p>
-          My favorite topics in computer science include deep learning, computer vision, and computational biology. On campus, I co-lead <a href="rehack.co">Rehack</a>, which hosts an annual reverse hackathon for 100+ students around the world. I also serve as academic co-chair of the COS Council and participate in Princeton Racing Electric.
+          On campus, I co-lead <a href="rehack.co">Rehack</a>, which hosts an annual reverse hackathon for 100+ students around the world. I also serve as academic co-chair of the COS Council and participate in Princeton Racing Electric.
         </p>
 
         <p>
@@ -165,44 +160,46 @@
 
       <p class="section__subtitle section__subtitle--work">A selection of my work</p>
 
-      <div class="portfolio">
-        <!-- Portfolio item 01 -->
-        <a href="#" class="portfolio__item">
-          <img src="portfolio/portfolio-01.png" alt="this website" class="portfolio__img">
-        </a>
-        
-        <!-- Portfolio item 02 -->
-        <a href="#" class="portfolio__item">
-          <img src="portfolio/portfolio-02.png" alt="NOWW" class="portfolio__img">
-        </a>
+      <!-- Swiper -->
+      <div class="swiper portfolio__swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-1">
+            <div class="portfolio__content">
+              <h2 class="portfolio__number">01</h2>
+              <h3>This Website</h3>
+              <p>A platform to share a little about my skills and experiences.</p>
+              <a href="#">View on Github</a>
+            </div>
+          </div>
 
-        <!-- Portfolio item 03 -->
-        <a href="#" class="portfolio__item">
-          <img src="portfolio/portfolio-03.png" alt="hygiene monitoring system" class="portfolio__img">
-        </a>
+          <div class="swiper-slide swiper-slide-2">
+            <div class="portfolio__content">
+              <h2 class="portfolio__number">02</h2>
+              <h3>NOWW</h3>
+              <p>An iOS-based social meetup app centered around spontaneity.</p>
+              <a href="#">See On App Store</a>
+            </div>
+          </div>
 
-        <!-- Portfolio item 04 -->
-        <a href="#" class="portfolio__item">
-          <img src="portfolio/portfolio-04.png" alt="trinucleotide repeat analysis" class="portfolio__img">
-        </a>
+          <div class="swiper-slide swiper-slide-3">
+            <div class="portfolio__content">
+              <h2 class="portfolio__number">03</h2>
+              <h3>A Hygiene Monitoring System</h3>
+              <p>A deep-learning powered system using computer vision to evaluate handwashing procedure in real time.</p>
+              <a href="#">Read the Paper</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide swiper-slide-4">
+            <div class="portfolio__content">
+              <h2 class="portfolio__number">04</h2>
+              <h3>Trinucleotide Repeat MIP Analysis</h3>
+              <p>A dive into the potential relationships between trinucleotide repeat sequences and Huntington's disease.</p>
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-
-      <p>
-        This Website
-      </p>
-
-      <p>
-        NOWW
-      </p>
-
-      <p>
-        Hygiene Monitoring System
-      </p>
-
-      <p>
-        Trinucleotide Repeat Analysis
-      </p>
     </section>
 
 
@@ -237,7 +234,108 @@
 
 
 
-
+    <!-- Scripts -->
     <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/vanilla-tilt.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/hover-button.js"></script>
+
+
+    <script>
+      // Skills circles
+      VanillaTilt.init(document.querySelectorAll(".skills__circle"), {
+        max: 30,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.8
+      });
+      
+      let skills_list = document.querySelectorAll(".skills__circle");
+      let skills_name = document.querySelector(".skills__name");
+      let bg = document.querySelector(".my-skills");
+
+      skills_list.forEach(elements => {
+        elements.addEventListener('mouseover', function(skill) {
+          let text= elements.getAttribute('data-text');
+          skills_name.style.opacity = "1";
+          skills_name.innerHTML = text;
+
+          let color = elements.getAttribute('data-color');
+          bg.style.backgroundColor = color;
+          skills_name.style.color = color;
+          
+          skills_name.style.transform = "translateY(25%)";
+        })
+
+        elements.addEventListener('mouseout', function(skill) {
+          skills_name.style.opacity = "0";
+          bg.style.backgroundColor = null;
+          
+          skills_name.style.transform = "translateY(20%)";
+        })
+      })
+
+      // swiper.js
+      var swiper = new Swiper(".portfolio__swiper", {
+        
+        on: {
+          slideChange: function () {
+            var prevSlide = this.slides[this.previousIndex];
+            if (prevSlide.vanillaTilt != null) {
+              prevSlide.vanillaTilt.removeEventListeners();
+            }
+
+            var curSlide = this.slides[this.activeIndex];
+            if (curSlide.vanillaTilt != null) {
+              curSlide.vanillaTilt.addEventListeners();
+            } else {
+              VanillaTilt.init(curSlide, {
+                max: 10,
+                speed: 700,
+                perspective: 1500,
+                glare: true,
+                "max-glare": 1
+              });
+            }
+          }
+        },
+
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+
+        coverflowEffect: {
+          rotate: 20,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true,
+        },
+
+        loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        speed: 1500,
+
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+      // const skill_icons = document.querySelectorAll('.skills__circle');
+      // skill_icons.forEach(function(icon) {
+      //   new HoverButton(icon);
+      // });
+
+      
+    </script>
+
   </body>
 </html>
