@@ -26,17 +26,35 @@
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
       </button>
-      <nav class="nav">
+      <nav class="glass nav">
         <ul class="nav__list">
           <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
           <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
           <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Resume</a></li>
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </header>
+
+    <!-- Lander -->
+    <section class="lander">
+      <div class="lander__animation">
+        <div class="lander__typer">
+          <h1 class="lander__text lander__head">Hello,&nbsp;</h1>
+          <ul class="lander__title-options">
+            <li><h1 class="lander__text lander__option lander__option-1" data-animation>World!</h1></li>
+            <li><h1 class="lander__text lander__option lander__option-2">I am Harvey Wang.</h1></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lander__continue">
+        <p class="lander__subtitle">Welcome to my website!</p>
+        <a href="#home">
+          <div class="lander__scroll"></div>
+        </a>
+      </div>
+    </section>
 
 
     <!-- Introduction -->
@@ -46,6 +64,50 @@
       </h1>
       <p class="section__subtitle section__subtitle--intro">CS undergrad @ Princeton</p>
       <img src="img/harvey_bg_cropped.png" alt="a picture of Harvey smiling" class="intro__img">
+    </section>
+    
+    <!-- About Me -->
+    <section class="about-me" id="about">
+      <h2 class="section__title section__title--about">Who I am</h2>
+      <p class="section__subtitle section__subtitle--about">CS student at Princeton University</p>
+
+
+      <div class="about-me__body">
+        <p>
+          I am a 2nd year undergraduate studying computer science at Princeton University.
+        </p>
+
+        <ul class="experiences">
+          <li class="experience">
+            <p><strong>Intern at TrueToForm</strong> (Winter 2021 - present)</p>
+          </li>
+          <li class="experience">
+            <p><strong>Course Assistant for Algorithms and Data Structures</strong> (Jan 2021 - present)</p>
+          </li>
+          <li class="experience">
+            <p><strong>Intern at ES Systems</strong> (Summer 2021)</p>
+          </li>
+          <li class="experience">
+            <p><strong>Programming Tutor at The Coding School</strong> (Summer 2020)</p>
+          </li>
+        </ul>
+
+        <p>
+          My favorite topics in computer science include deep learning, computer vision, and computational biology.
+        </p>
+
+        <p>
+          On campus, I co-lead <a href="rehack.co">Rehack</a>, which hosts an annual reverse hackathon for 100+ students around the world. I also serve as academic co-chair of the COS Council and participate in Princeton Racing Electric.
+        </p>
+
+        <p>
+          I was born an raised in New Jersey with two older sisters. Besides programming, I also love to play soccer and the piano!
+        </p>
+      </div>
+
+      <img src="img/harvey-headshot.JPG" alt="Harvey at a waterfall" class="about-me__img">
+
+      <p><a href="#" class="about-me__resume">Resume</a></p>
     </section>
 
 
@@ -108,49 +170,6 @@
       </div>
 
       <a href="#work" class="btn">My Work</a>
-    </section>
-
-
-    <!-- About Me -->
-    <section class="about-me" id="about">
-      <h2 class="section__title section__title--about">Who I am</h2>
-      <p class="section__subtitle section__subtitle--about">CS student at Princeton University</p>
-
-
-      <div class="about-me__body">
-        <p>
-          I am a 2nd year undergraduate studying computer science at Princeton University.
-        </p>
-
-        <ul class="experiences">
-          <li class="experience">
-            <p><strong>Intern at TrueToForm</strong> (Winter 2021 - present)</p>
-          </li>
-          <li class="experience">
-            <p><strong>Course Assistant for Algorithms and Data Structures</strong> (Jan 2021 - present)</p>
-          </li>
-          <li class="experience">
-            <p><strong>Intern at ES Systems</strong> (Summer 2021)</p>
-          </li>
-          <li class="experience">
-            <p><strong>Programming Tutor at The Coding School</strong> (Summer 2020)</p>
-          </li>
-        </ul>
-
-        <p>
-          My favorite topics in computer science include deep learning, computer vision, and computational biology.
-        </p>
-
-        <p>
-          On campus, I co-lead <a href="rehack.co">Rehack</a>, which hosts an annual reverse hackathon for 100+ students around the world. I also serve as academic co-chair of the COS Council and participate in Princeton Racing Electric.
-        </p>
-
-        <p>
-          I was born an raised in New Jersey with two older sisters. Besides programming, I also love to play soccer and the piano!
-        </p>
-      </div>
-
-      <img src="img/harvey-headshot.JPG" alt="Harvey at a waterfall" class="about-me__img">
     </section>
 
 
@@ -239,13 +258,19 @@
     <script type="text/javascript" src="js/vanilla-tilt.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="js/hover-button.js"></script>
 
 
     <script>
+      // Lander
+      let lander1 = document.querySelector(".lander__option-1");
+      document.documentElement.style.setProperty("--typer1-len", lander1.textContent.length)
+      let lander2 = document.querySelector(".lander__option-2");
+      document.documentElement.style.setProperty("--typer2-len", lander2.textContent.length)
+      console.log(lander1.textContent.length)
+
       // Skills circles
       VanillaTilt.init(document.querySelectorAll(".skills__circle"), {
-        max: 30,
+        max: 10,
         speed: 400,
         glare: true,
         "max-glare": 0.8
@@ -317,7 +342,7 @@
         loop: true,
 
         autoplay: {
-          delay: 3000,
+          delay: 2500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         },

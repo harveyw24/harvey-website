@@ -6,6 +6,7 @@
 
 /* Custom properties */
 :root {
+    /* Primary must be monospace */
     --ff-primary: 'Ubuntu Mono', monospace;
     --ff-secondary: 'Ubuntu', sans-serif;
 
@@ -15,6 +16,7 @@
     --clr-light: #fff;
     --clr-dark: #232528;
     --clr-dark-2: #515052;
+    --clr-dark-3: #0B0C10;
     --clr-accent: #59c3c8;
     --clr-accent-2: #ede580;
     --clr-accent-3: #ce5432;
@@ -24,9 +26,19 @@
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+    --fs-dynamic: clamp(1rem, 3.5vw + 1rem, 4rem);
+    --fs-dynamic-smaller: clamp(1rem, 1vw + 1rem, 4rem);
 
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
           0.125em 0.125em 0.25em rgba(0,0,0,.25);
+
+    /* Landing typer */
+    --lander-len: 1;
+    --typer1-len: 1;
+    --typer2-len: 1;
+    --typer1-speed: 1.5s;
+    --typer2-speed: 2.5s;
+    --backspace-speed: .8s;
 }
 
 @media (min-width: 800px) {
@@ -35,6 +47,31 @@
         --fs-h2: 3.75rem;
         --fs-h3: 1.5rem;
         --fs-body: 1.125rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: .5em;
+    height: .5em;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .5);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, .25)
+}
+
+@supports (scrollbar-color: rgba(255, 255, 255, .5)) {
+    * {
+        scrollbar-color: rgba(255, 255, 255, .5) transparent;
+        scrollbar-width: thin;
     }
 }
 
@@ -111,6 +148,8 @@ h3 { font-size: var(--fs-h3); }
     margin-bottom: 0.25em;
 }
 
+.lander__title,
+.lander__title--before,
 .section__title--intro {
     font-weight: var(--fw-reg);
 }
@@ -138,6 +177,16 @@ h3 { font-size: var(--fs-h3); }
     margin-bottom: 2em;
 }
 
+/* Glass style */
+.glass {
+    box-shadow: var(--bs);
+    background: rgba(255, 255, 255, .1);
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-left: 1px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(5px);
+}
+
+
 
 /* Header */
 
@@ -153,7 +202,6 @@ h3 { font-size: var(--fs-h3); }
 
 .nav {
     position: fixed;
-    background: var(--clr-dark-2);
     color: var(--clr-light);
     top: 0;
     bottom: 0;
@@ -249,6 +297,226 @@ h3 { font-size: var(--fs-h3); }
 .hamburger::after {bottom: 6px; }
 
 
+
+/* Lander */
+
+.lander {
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--clr-dark-3);
+}
+
+.lander__animation {
+    display: flex;
+    padding-top: 30vh;
+    justify-content: center;
+    width: 100%;
+    height: 55vh;
+}
+
+.lander__typer {
+    display: flex;
+}
+
+.lander__text {
+    font-size: var(--fs-dynamic);
+    position: relative;
+}
+
+.lander__title-options {
+    margin: 0;
+    padding: 0;
+    height: var(--fs-dynamic);
+    overflow: hidden;   
+}
+
+.lander__title-options li {
+    list-style: none;
+    position: relative;
+    /* padding-right: .1em; */
+    animation:
+        switch calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) steps(1) forwards,
+        appear calc(var(--typer1-speed)/var(--typer1-len) * 7) steps(1) forwards;
+}
+
+@keyframes switch {
+    100% {
+        top: calc(-1*var(--fs-dynamic));
+    }
+}
+
+.lander__text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-dark-3);
+}
+
+.lander__text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    background: #fff;
+    width: .05em;
+    height: 1em;
+}
+
+/* Typing for "Hello" */
+.lander__head::before {
+    animation:
+        type2 calc(var(--typer1-speed)/var(--typer1-len) * 7) steps(7) forwards;
+}
+
+.lander__head::after {
+    animation:
+        type2 calc(var(--typer1-speed)/var(--typer1-len) * 7) steps(7) forwards,
+        blink 1s steps(2, start) infinite,
+        blink 0s steps(1) calc(var(--typer1-speed)/var(--typer1-len) * 7) forwards;
+}
+
+/* Typing for subsequent text */
+.lander__option {
+    position: relative;
+}
+
+.lander__option-1::before {
+    animation:
+        type1 var(--typer1-speed) steps(6) calc(var(--typer1-speed)/var(--typer1-len) * 7) forwards,
+        backspace var(--backspace-speed) steps(var(--typer1-len)) calc(var(--typer1-speed) + var(--typer1-speed)/var(--typer1-len) * 7 + 2s) forwards;
+}
+
+.lander__option-1::after {
+    animation:
+        type1 var(--typer1-speed) steps(var(--typer1-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7) forwards,
+        backspace var(--backspace-speed) steps(var(--typer1-len)) calc(var(--typer1-speed) + var(--typer1-speed)/var(--typer1-len) * 7 + 2s) forwards,
+        blink 1s steps(2, start) calc(var(--typer1-speed)/var(--typer1-len) * 7) infinite,
+        blink 0s steps(1) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) forwards;
+}
+
+.lander__option-2::before {
+    animation:
+        type2 var(--typer2-speed) steps(var(--typer2-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) forwards;
+}
+
+.lander__option-2::after {
+    animation:
+        type2 var(--typer2-speed) steps(var(--typer2-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) forwards,
+        blink 1s steps(2, start) infinite;
+}
+
+/* Animations */
+@keyframes type1 {
+    to {
+        left: calc(100% * 6/17);
+    }
+}
+
+@keyframes backspace {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes type2 {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes appear {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+/* Welcome subtitle and continue button */
+.lander__continue {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUp 1.5s ease calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s + var(--typer2-speed) + .5s) forwards;
+}
+
+.lander__subtitle {
+    padding-bottom: 5vh;
+    font-size: var(--fs-dynamic-smaller);    
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lander__scroll {
+    position: absolute;
+    left: calc(50% - .9em);
+    height: 3em;
+    width: 1.8em;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 3em;
+    cursor: pointer;
+    transition:
+        background-color 250ms linear;
+}
+
+.lander__scroll:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.lander__scroll::before,
+.lander__scroll::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    border: 2px solid white;
+    height: .6em;
+    width: .6em;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 2.5s ease-in-out infinite;
+}
+
+.lander__scroll::after {
+    top: 20%;
+    animation-delay: .4s;
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+        top: 90%;
+    }
+    100% {
+        opacity: 0;
+        top: 90%;
+    }
+}
+
+
 /* Intro section */
 
 .intro {
@@ -304,6 +572,8 @@ h3 { font-size: var(--fs-h3); }
     transition: 250ms;
 }
 
+/* TODO: make icons tap activated on mobile */
+
 .section__title--skills {
     color: var(--clr-accent);
     position: relative;
@@ -341,7 +611,7 @@ h3 { font-size: var(--fs-h3); }
     background: rgba(255, 255, 255, .1);
     border-top: 1px solid rgba(255, 255, 255, .5);
     border-left: 1px solid rgba(255, 255, 255, .5);
-    backdrop-filter: blur(3px);
+    /* backdrop-filter: blur(3px); */
     transform-style: preserve-3d;
     transition:
         background 250ms linear,
@@ -354,7 +624,7 @@ h3 { font-size: var(--fs-h3); }
 
 .skills__circle:hover .skills__icon {
     filter: grayscale(1) brightness(50%) contrast(400%) invert(100%);
-    transform: scale(125%) translateZ(100px);
+    transform: scale(125%) translateZ(70px);
 }
 
 .skills__circle .js-tilt-glare {
@@ -516,7 +786,7 @@ h3 { font-size: var(--fs-h3); }
 .swiper {
     width: 100%;
     padding-top: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 160px;
 }
 
 .swiper-slide {
