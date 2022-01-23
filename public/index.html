@@ -38,7 +38,7 @@
     </header>
 
     <!-- Lander -->
-    <section class="lander">
+    <section class="lander" id="home">
       <div class="lander__animation">
         <div class="lander__typer">
           <h1 class="lander__text lander__head">Hello,&nbsp;</h1>
@@ -50,7 +50,7 @@
       </div>
       <div class="lander__continue">
         <p class="lander__subtitle">Welcome to my website!</p>
-        <a href="#home">
+        <a href="#about">
           <div class="lander__scroll"></div>
         </a>
       </div>
@@ -58,56 +58,136 @@
 
 
     <!-- Introduction -->
-    <section class="intro" id="home">
+    <!-- <section class="intro" id="home">
       <h1 class="section__title section__title--intro">
         Hi, I am <strong>Harvey Wang</strong>
       </h1>
       <p class="section__subtitle section__subtitle--intro">CS undergrad @ Princeton</p>
       <img src="img/harvey_bg_cropped.png" alt="a picture of Harvey smiling" class="intro__img">
-    </section>
+    </section> -->
     
     <!-- About Me -->
-    <section class="about-me" id="about">
-      <h2 class="section__title section__title--about">Who I am</h2>
-      <p class="section__subtitle section__subtitle--about">CS student at Princeton University</p>
-
-
-      <div class="about-me__body">
-        <p>
-          I am a 2nd year undergraduate studying computer science at Princeton University.
-        </p>
-
-        <ul class="experiences">
-          <li class="experience">
-            <p><strong>Intern at TrueToForm</strong> (Winter 2021 - present)</p>
-          </li>
-          <li class="experience">
-            <p><strong>Course Assistant for Algorithms and Data Structures</strong> (Jan 2021 - present)</p>
-          </li>
-          <li class="experience">
-            <p><strong>Intern at ES Systems</strong> (Summer 2021)</p>
-          </li>
-          <li class="experience">
-            <p><strong>Programming Tutor at The Coding School</strong> (Summer 2020)</p>
-          </li>
-        </ul>
-
-        <p>
-          My favorite topics in computer science include deep learning, computer vision, and computational biology.
-        </p>
-
-        <p>
-          On campus, I co-lead <a href="rehack.co">Rehack</a>, which hosts an annual reverse hackathon for 100+ students around the world. I also serve as academic co-chair of the COS Council and participate in Princeton Racing Electric.
-        </p>
-
-        <p>
-          I was born an raised in New Jersey with two older sisters. Besides programming, I also love to play soccer and the piano!
-        </p>
+    <section class="intro">
+      <div class="section__bg">
+        <img src="img/earth_dark.jpg" class="bg__img" alt="earth from space">
       </div>
 
-      <img src="img/harvey-headshot.JPG" alt="Harvey at a waterfall" class="about-me__img">
+      <div class="intro__body">
+        <div class="intro__header">
+          <h2 class="section__title section__title--about">About Me</h2>
+          <img src="img/harvey_hs.png" alt="Harvey at a waterfall" class="intro__img">
+        </div>
+        
+        <p>
+          Hi, my name is Harvey and I am studying computer science at Princeton University.
+        </p>
 
-      <p><a href="#" class="about-me__resume">Resume</a></p>
+        <!-- <h2 class="section__title section__title--about">About Me</h2> -->
+        <p class="section__subtitle section__subtitle--about">Who I Am</p>
+
+        <div class="intro__grid">
+          <div class="intro__row">
+            <h3 class="intro__row--title">Education</h3>
+            <p class="intro__row--content">
+              Princeton University <br>
+              Computer Science B.S.E. <br>
+              Class of 2024
+            </p>
+            <img src="img/princeton-logo.png" alt="princeton university logo" class="intro__row--img">
+          </div>
+          <div class="intro__row">
+            <h3 class="intro__row--title">Hobbies</h3>
+            <p class="intro__row--content">
+              Playing and watching soccer <br>
+              Playing piano <br>
+              Eating fruit snacks
+            </p>
+            <img src="img/harvey_soccer-removebg.png" alt="harvey playing soccer" class="intro__row--img" style="max-height: 100%;">
+          </div>
+          <div class="intro__row">
+            <h3 class="intro__row--title">Fun Facts</h3>
+            <p class="intro__row--content">
+              Double jointed <br>
+              2 older sisters <br>
+              Former NJ FBLA State President
+            </p>
+            <img src="img/fbla.png" alt="fbla logo" class="intro__row--img">
+          </div>
+        </div>
+
+        <!-- <h2 class="section__title section__title--about">Experience</h2> -->
+        <p class="section__subtitle section__subtitle--about">Experience</p>
+
+        <div class="intro__grid">
+          <div class="intro__row">
+            <h3 class="intro__row--title">TrueToForm</h3>
+            <p class="intro__row--content">
+              Software Engineering Intern <br>
+              Winter 2021-2022
+            </p>
+            <img src="img/ttf_logo.svg" alt="TrueToForm logo" class="intro__row--img">
+          </div>
+          <div class="intro__row">
+            <h3 class="intro__row--title">Algs. & Data Structures</h3>
+            <p class="intro__row--content">
+              Course Assistant for COS226 <br>
+              Since Jan. 2021
+            </p>
+            <img src="img/princeton-cs-logo.jpg" alt="princeton cs logo" class="intro__row--img">
+          </div>
+          <div class="intro__row">
+            <h3 class="intro__row--title">ES Systems</h3>
+            <p class="intro__row--content">
+              Data Analysis Intern <br>
+              Summer 2021
+            </p>
+            <img src="img/es-systems-logo.png" alt="es systems logo" class="intro__row--img">
+          </div>
+          <div class="intro__row">
+            <h3 class="intro__row--title">The Coding School</h3>
+            <p class="intro__row--content">
+              Programming Tutor <br>
+              Summer 2021
+            </p>
+            <img src="img/the-coding-school-logo.png" alt="the coding school logo" class="intro__row--img">
+          </div>
+        </div>
+
+        <!-- <h2 class="section__title section__title--about">Activities</h2> -->
+        <p class="section__subtitle section__subtitle--about">Activities</p>
+
+        <div class="intro__grid">
+          <div class="intro__row">
+            <h3 class="intro__row--title">Rehack</h3>
+            <p class="intro__row--content">
+              Co-Director <br>
+              Annual reverse hackathon for 100+ students.
+            </p>
+            <img src="img/rehack-logo.png" alt="rehack logo" class="intro__row--img">
+          </div>
+          <div class="intro__row">
+            <h3 class="intro__row--title">COS Council</h3>
+            <p class="intro__row--content">
+              Academic Co-Chair <br>
+              Intermediary between Princeton COS students and department.
+            </p>
+            <img src="img/cos-council-logo.png" alt="cos council logo" class="intro__row--img">
+          </div>
+          <div class="intro__row">
+            <h3 class="intro__row--title">Princeton Racing Electric</h3>
+            <p class="intro__row--content">
+              Systems Team <br>
+              Student-run team competing in Formula SAE.
+            </p>
+            <img src="img/pre-logo-white.png" alt="princeton racing electric logo" class="intro__row--img">
+          </div>
+        </div>
+
+        <div class="intro__resume">
+          <a href="#" class="btn">Resume</a>
+        </div>
+
+      </div>
     </section>
 
 
@@ -141,6 +221,9 @@
           </div>
           <div class="skills__circle circle-node-js" data-text="NodeJS" data-color="rgba(132,203,44,1)">
             <img src="icons/node-js.svg" alt="node-js icon" class="skills__icon icon-node-js">
+          </div>
+          <div class="skills__circle circle-react" data-text="React" data-color="rgba(96,218,252,1)">
+            <img src="icons/react.svg" atl="react icon" class="skills__icon icon-react">
           </div>
           <div class="skills__circle circle-matlab" data-text="MATLAB" data-color="rgba(157,65,206,1)">
             <img src="icons/matlab.svg" alt="matlab icon" class="skills__icon icon-matlab">
