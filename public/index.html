@@ -58,12 +58,12 @@
 
     
     <!-- About Me -->
-    <section class="about" id="about">
+    <section class="about-me" id="about">
       <div class="section__bg">
         <img src="img/earth_dark.jpg" class="bg__img" alt="earth from space">
       </div>
 
-      <div class="intro__body">
+      <div class="about__body">
         <div class="about__header">
           <h2 class="section__title section__title--about">About Me</h2>
           <p class="about__blurb">
@@ -235,6 +235,8 @@
 
       <div class="courses">
         <ul class="courses__list">
+          <li>Principles of Computer System Design</li>
+          <li>Economics and Computing</li>
           <li>Introduction to Machine Learning</li>
           <li>Advanced Programming Techniques</li>
           <li>Algorithms and Data Structures</li>
@@ -296,8 +298,47 @@
 
 
     <!-- Contact -->
-    <section>
-      <h2 class="section__title">Contact Me</h2>
+    <section class="contact-me" id="contact">
+
+      <form action="https://formsubmit.co/harvey.wang.1010@gmail.com" method="POST" class="contact__form">
+        <h2 class="section__title section__title--contact">Contact Me</h2>
+
+        <div class="contact__row">
+          <div class="contact__col">
+            <div class="contact__inputBox">
+              <input type="text" name="" required="required">
+              <span class="contact__text">Name</span>
+              <span class="contact__line"></span>
+            </div>
+          </div>
+
+          <div class="contact__col">
+            <div class="contact__inputBox">
+              <input type="email" name="" required="required">
+              <span class="contact__text">Email</span>
+              <span class="contact__line"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__row">
+          <div class="contact__col">
+            <div class="contact__inputBox contact__textarea">
+              <textarea required="required"></textarea>
+              <span class="contact__text">Type Your Message:</span>
+              <span class="contact__line"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__row">
+          <div class="contact__col">
+            <input type="submit" value="Send" class="btn contact__submit">
+          </div>
+        </div>
+        <input type="hidden" name="_subject" value="New Website Contact Request">
+        
+      </form>
     </section>
 
 

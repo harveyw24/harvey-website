@@ -170,7 +170,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .section__subtitle {
-    margin: 0;
+    margin: 0 auto;
     font-size: var(--fs-h3);
 }
 
@@ -600,18 +600,18 @@ h3 { font-size: var(--fs-h3); }
 } */
 
 /* Intro section */
-.about {
+.about-me {
     padding: 0;
     transform-origin: center top;
     transform: scaleY(calc(1 - var(--scale)));
 }
 
-.about > * {
+.about-me > * {
     transform-origin: center top;
     transform: scaleY(calc(1 / (1 - var(--scale))));
 }
 
-.intro__body {
+.about__body {
     position: relative;
     margin: -50vh auto 0;
     max-width: 1000px;
@@ -622,7 +622,7 @@ h3 { font-size: var(--fs-h3); }
     border-radius: 1em;
 }
 
-.intro__body > * + * {
+.about__body > * + * {
     margin-top: 2rem;
 }
 
@@ -660,6 +660,7 @@ h3 { font-size: var(--fs-h3); }
     width: 90%;
     display: grid;
     margin: 0 auto;
+    grid-template-rows: min-content auto;
     grid-template-columns: 70% 15%;
     grid-template-areas:
         "title img"
@@ -673,7 +674,7 @@ h3 { font-size: var(--fs-h3); }
     grid-area: title;
     position: relative;
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .intro__row--content {
@@ -700,6 +701,7 @@ h3 { font-size: var(--fs-h3); }
         width: 90%;
         display: grid;
         margin: 0 auto;
+        grid-template-rows: auto;
         grid-template-columns: 30% 40% 15%;
         grid-template-areas:
             "title content img";
@@ -1063,6 +1065,163 @@ h3 { font-size: var(--fs-h3); }
     transform: scale(1.2);
     opacity: .5;
 }
+
+
+/* Contact */
+.contact-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+}
+
+/* .contact-me::before {
+    content: '';
+    position: absolute;
+    width: 45vh;
+    height: 45vh;
+    background: linear-gradient(#ffeb3b, #e91e63);
+    border-radius: 50%;
+    transform: translate(-90%, -45%);
+}
+
+.contact-me::after {
+    content: '';
+    position: absolute;
+    width: 35vh;
+    height: 35vh;
+    background: linear-gradient(#2196f3, #83d8ff);
+    border-radius: 50%;
+    transform: translate(100%, 40%);
+} */
+
+.contact__form {
+    position: relative;
+    z-index: 22;
+    width: 100%;
+    max-width: 1000px;
+    padding: 2em;
+    background: rgba(0,0,0,.1);
+    box-shadow: var(--bs);
+    background: rgba(255, 255, 255, .1);
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 1em;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+.contact__form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+    transform: skewX(-10deg);
+}
+
+.section__title--contact {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.contact__row {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 1em;
+}
+
+.contact__row .contact__col {
+    position: relative;
+    width: 100%;
+    padding: 0 0.5em;
+    margin: 1.2em 0 1em;
+}
+
+.contact__inputBox {
+    position: relative;
+    width: 100%;
+    height: 2em;
+}
+
+.contact__textarea {
+    position: relative;
+    width: 100%;
+    height: 6em;
+}
+
+.contact__inputBox input,
+.contact__inputBox textarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    z-index: 1;
+    color: #000;
+    padding: .4em;
+}
+
+.contact__inputBox textarea {
+    resize: none;
+}
+
+.contact__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 2em;
+    display: block;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.contact__inputBox input:focus + .contact__text,
+.contact__inputBox input:valid + .contact__text,
+.contact__inputBox textArea:focus + .contact__text,
+.contact__inputBox textArea:valid + .contact__text {
+    top: -2em;
+    left: -.2em;
+}
+
+.contact__line {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.contact__inputBox input:focus ~ .contact__line,
+.contact__inputBox input:valid ~ .contact__line,
+.contact__inputBox textarea:focus ~ .contact__line,
+.contact__inputBox textarea:valid ~ .contact__line {
+    height: 100%;
+}
+
+.contact__submit {
+    border: none;
+    outline: none;
+    line-height: 1.5em;
+}
+
+
+
+
 
 
 /* Footer */
