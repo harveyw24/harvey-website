@@ -39,9 +39,9 @@
     --lander-len: 1;
     --typer1-len: 1;
     --typer2-len: 1;
-    --typer1-speed: 1.5s;
+    --typer1-speed: 1s;
     --typer2-speed: 2.5s;
-    --backspace-speed: .8s;
+    --backspace-speed: .5s;
 }
 
 @media (prefers-reduced-motion) {
@@ -418,7 +418,7 @@ h3 { font-size: var(--fs-h3); }
     /* background-blend-mode: difference; */
     background-repeat: no-repeat;
     background-position: center bottom;
-    animation: fadein 2s ease calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s + var(--typer2-speed) + .5s) forwards;
+    animation: fadein 2s ease calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 2s + var(--typer2-speed) + .5s) forwards;
 }
 
 @keyframes fadein {
@@ -460,7 +460,7 @@ h3 { font-size: var(--fs-h3); }
     position: relative;
     /* padding-right: .1em; */
     animation:
-        switch calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) steps(1) forwards,
+        switch calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 2s) steps(1) forwards,
         appear calc(var(--typer1-speed)/var(--typer1-len) * 7) steps(1) forwards;
 }
 
@@ -502,7 +502,7 @@ h3 { font-size: var(--fs-h3); }
         blink 0s steps(1) calc(var(--typer1-speed)/var(--typer1-len) * 7) forwards;
 }
 
-/* Typing for subsequent text */
+/* Typing for "World" */
 .lander__option {
     position: relative;
 }
@@ -510,25 +510,26 @@ h3 { font-size: var(--fs-h3); }
 .lander__option-1::before {
     animation:
         type1 var(--typer1-speed) steps(6) calc(var(--typer1-speed)/var(--typer1-len) * 7) forwards,
-        backspace var(--backspace-speed) steps(var(--typer1-len)) calc(var(--typer1-speed) + var(--typer1-speed)/var(--typer1-len) * 7 + 2s) forwards;
+        backspace var(--backspace-speed) steps(var(--typer1-len)) calc(var(--typer1-speed) + var(--typer1-speed)/var(--typer1-len) * 7 + 1s) forwards;
 }
 
 .lander__option-1::after {
     animation:
         type1 var(--typer1-speed) steps(var(--typer1-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7) forwards,
-        backspace var(--backspace-speed) steps(var(--typer1-len)) calc(var(--typer1-speed) + var(--typer1-speed)/var(--typer1-len) * 7 + 2s) forwards,
+        backspace var(--backspace-speed) steps(var(--typer1-len)) calc(var(--typer1-speed) + var(--typer1-speed)/var(--typer1-len) * 7 + 1s) forwards,
         blink 1s steps(2, start) calc(var(--typer1-speed)/var(--typer1-len) * 7) infinite,
-        blink 0s steps(1) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) forwards;
+        blink 0s steps(1) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 2s) forwards;
 }
 
+/* Typing for "I am Harvey Wang." */
 .lander__option-2::before {
     animation:
-        type2 var(--typer2-speed) steps(var(--typer2-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) forwards;
+        type2 var(--typer2-speed) steps(var(--typer2-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 2s) forwards;
 }
 
 .lander__option-2::after {
     animation:
-        type2 var(--typer2-speed) steps(var(--typer2-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s) forwards,
+        type2 var(--typer2-speed) steps(var(--typer2-len)) calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 2s) forwards,
         blink 1s steps(2, start) infinite;
 }
 
@@ -571,7 +572,7 @@ h3 { font-size: var(--fs-h3); }
     text-align: center;
     opacity: 0;
     transform: translateY(2rem);
-    animation: fadeInUp 1.5s ease calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s + var(--typer2-speed) + .5s) forwards;
+    animation: fadeInUp 1.5s ease calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 2s + var(--typer2-speed) + .5s) forwards;
 }
 
 .lander__subtitle {
@@ -1018,9 +1019,8 @@ h3 { font-size: var(--fs-h3); }
 .circle-firebase:hover { background: rgba(251,202,63,.8); }
 
 .courses {
-    margin: 0 auto;
-    margin-bottom: 4em;
-    max-width: 1000px;
+    margin: 4em auto;
+    /* max-width: 1000px; */
 }
 
 .skills__list,
