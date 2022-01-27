@@ -417,7 +417,7 @@ h3 { font-size: var(--fs-h3); }
     background-size: contain;
     /* background-blend-mode: difference; */
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center bottom;
     animation: fadein 2s ease calc(var(--typer1-speed)/var(--typer1-len) * 7 + var(--typer1-speed) + var(--backspace-speed) + 3s + var(--typer2-speed) + .5s) forwards;
 }
 
