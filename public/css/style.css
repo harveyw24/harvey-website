@@ -9,6 +9,7 @@
     /* Primary must be monospace */
     --ff-primary: 'Ubuntu Mono', monospace;
     --ff-secondary: 'Ubuntu', sans-serif;
+    --ff-tertiary: 'Source Code Pro', monospace;
 
     --fw-reg: 300;
     --fw-bold: 700;
@@ -115,6 +116,10 @@ a {
     color: var(--clr-accent-3);
 }
 
+p {
+    font-family: var(--ff-tertiary);
+}
+
 /* :focus {
     outline: 3px solid var(--clr-accent);
     outline-offset: 3px;
@@ -125,11 +130,11 @@ a {
 .btn {
     display: inline-block;
     padding: .5em 2.5em;
-    background: var(--clr-accent);
-    color: var(--clr-dark);
+    background: var(--clr-accent-3);
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: var(--fw-bold);
@@ -171,11 +176,11 @@ h3 { font-size: var(--fs-h3); }
 
 .section__subtitle {
     margin: 0 auto;
-    font-size: var(--fs-h3);
+    font-size: 1.8rem;
 }
 
 .section__subtitle--about {
-    background: var(--clr-accent);
+    background: var(--clr-accent-3);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
@@ -183,6 +188,9 @@ h3 { font-size: var(--fs-h3); }
     position: relative;
     left: -1em;
     width: calc(100% + 2em);
+    text-transform: uppercase;
+    /* letter-spacing: 2px; */
+    font-weight: var(--fw-bold);
 }
 
 .section__subtitle--work {
@@ -577,7 +585,8 @@ h3 { font-size: var(--fs-h3); }
 
 .lander__subtitle {
     padding-bottom: 5vh;
-    font-size: var(--fs-dynamic-smaller);    
+    font-size: var(--fs-dynamic-smaller); 
+    font-family: var(--ff-tertiary);   
 }
 
 @keyframes fadeInUp {
@@ -684,6 +693,18 @@ h3 { font-size: var(--fs-h3); }
     }
 } */
 
+.section__body {
+    position: relative;
+    margin: -50vh auto 4em;
+    max-width: 1000px;
+    padding: 2em;
+    width: calc(100% - 2em);
+    /* background: rgba(0, 0, 0, 0.1); */
+    backdrop-filter: blur(4px);
+    /* text-align: center; */
+    border-radius: 1em;
+}
+
 /* Intro section */
 .about-me {
     padding: 0;
@@ -702,7 +723,7 @@ h3 { font-size: var(--fs-h3); }
     max-width: 1000px;
     padding: 2em;
     width: calc(100% - 2em);
-    background: rgba(0, 0, 0, 0.1);
+    /* background: rgba(0, 0, 0, 0.1); */
     backdrop-filter: blur(4px);
     /* text-align: center; */
     border-radius: 1em;
@@ -820,6 +841,34 @@ h3 { font-size: var(--fs-h3); }
     object-position: top;
 }
 
+.section__bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.013) 8.1%,
+        rgba(0, 0, 0, 0.049) 15.5%,
+        rgba(0, 0, 0, 0.104) 22.5%,
+        rgba(0, 0, 0, 0.175) 29%,
+        rgba(0, 0, 0, 0.259) 35.3%,
+        rgba(0, 0, 0, 0.352) 41.2%,
+        rgba(0, 0, 0, 0.45) 47.1%,
+        rgba(0, 0, 0, 0.55) 52.9%,
+        rgba(0, 0, 0, 0.648) 58.8%,
+        rgba(0, 0, 0, 0.741) 64.7%,
+        rgba(0, 0, 0, 0.825) 71%,
+        rgba(0, 0, 0, 0.896) 77.5%,
+        rgba(0, 0, 0, 0.951) 84.5%,
+        rgba(0, 0, 0, 0.987) 91.9%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+
 .section__bg::after {
     content: '';
     position: absolute;
@@ -853,24 +902,41 @@ h3 { font-size: var(--fs-h3); }
 /* Skills section */
 
 .my-skills {
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
-                url(../img/eclipse.jpeg);
-    /* background-color: var(--clr-dark-2); */
-    /* background-image: url(../img/eclipse.jpeg); */
-    background-size: cover;
-    background-blend-mode: multiply;
-    background-position: top;
-    /* background-attachment: fixed; */
-    /* TODO: insert parallax effect ^ */
-    color: var(--clr-light);
+    padding: 0;
+    transform-origin: center top;
+    transform: scaleY(calc(1 - var(--scale)));
     text-align: center;
     transition: 250ms;
 }
 
+.my-skills > * {
+    transform-origin: center top;
+    transform: scaleY(calc(1 / (1 - var(--scale))));
+}
+
+.section__bg .skills__bg-img {
+    mix-blend-mode: multiply;
+}
+
+/* .my-skills { */
+    /* background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
+                url(../img/eclipse.jpeg); */
+    /* background-color: var(--clr-dark-2); */
+    /* background-image: url(../img/eclipse.jpeg); */
+    /* background-size: cover;
+    background-blend-mode: multiply;
+    background-position: top; */
+    /* background-attachment: fixed; */
+    /* TODO: insert parallax effect ^ */
+    /* color: var(--clr-light);
+    text-align: center;
+    transition: 250ms; */
+/* } */
+
 /* TODO: make icons tap activated on mobile */
 
 .section__title--skills {
-    color: var(--clr-accent);
+    /* color: var(--clr-accent); */
     position: relative;
 }
 
@@ -889,12 +955,15 @@ h3 { font-size: var(--fs-h3); }
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     column-gap: 1em;
     row-gap: 1em;
+    max-width: 90%;
+    margin: auto;
 }
 
 .skills__circle {    
     position: relative;
     width: 1.6em;
     height: 1.6em;
+    height: calc(1.6em / 1.732);
     border-radius: 50%;
     font-weight: bold;
     font-size: 50px;
@@ -1019,8 +1088,18 @@ h3 { font-size: var(--fs-h3); }
 .circle-firebase:hover { background: rgba(251,202,63,.8); }
 
 .courses {
-    margin: 4em auto;
+    margin: 4em auto 1em;
     /* max-width: 1000px; */
+}
+
+.section__title--skills::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.25;
 }
 
 .skills__list,
@@ -1029,6 +1108,87 @@ h3 { font-size: var(--fs-h3); }
     padding-right: 2em;
 }
 
+
+/* Periodic table for coursework */
+.periodic-table {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+    grid-auto-rows: repeat(auto-fit, 1fr);
+	grid-gap: 1em;
+	margin: auto;
+	max-width: 80%;
+	justify-content: center;
+    padding-bottom: 3em;
+}
+
+@media (min-width: 800px) {
+    .periodic-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+        grid-auto-rows: 1fr;
+        grid-gap: 1em;
+        margin: auto;
+        max-width: 90%;
+        justify-content: center;
+    }
+
+    .empty-spacer-1 {
+        grid-column: 2 / span 2;
+        grid-row: 1;
+    }
+}
+
+.periodic-element {
+	/* padding: 4px; */
+	position: relative;
+	z-index: 1;
+	cursor: default;
+	transition: all 0.3s ease;
+}
+
+.periodic-element-inner {
+    background: transparent;
+    padding: 0.5em 1em;
+    /* width: 100%;
+    height: 100%; */
+    width: calc(100% - 0.5em);
+    height: calc(100% - 0.5em);
+    margin: 0.5em 0.5em 0;
+    transition: inherit;
+}
+
+.periodic-element .title {
+    font-weight: bold;
+    text-align: left;
+    font-size: 2em;
+    margin: 0.3em 0 0;
+    transition: 0.8s ease 600ms;
+}
+
+.periodic-element .description {
+    text-align: left;
+    font-size: 0.8em;
+    margin-top: -0.2em;
+    color: #fff;
+    font-family: var(--ff-tertiary);
+}
+
+.periodic-element:hover {
+    transform: scale(1.12);
+    z-index: 10;
+}
+
+.periodic-element:hover .periodic-element-inner {
+    background: var(--clr-accent);
+}
+
+.periodic-element:hover .title {
+    -webkit-text-fill-color: #222;
+}
+
+.periodic-element:hover .description  {
+    -webkit-text-fill-color: #222; 
+}
 
 
 /* My Work */

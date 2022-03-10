@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
     
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -80,7 +82,7 @@
         <img src="img/mountains.jpeg" class="bg__img" alt="mountains landscape">
       </div>
 
-      <div class="about__body">
+      <div class="section__body about__body">
         <div class="about__header">
           <h2 class="section__title section__title--about">About Me</h2>
           <p class="about__blurb">
@@ -183,7 +185,7 @@
           <div class="intro__row">
             <h3 class="intro__row--title">Princeton Racing Electric</h3>
             <p class="intro__row--content">
-              Systems Team <br>
+              Systems Subteam <br>
               Student-run team competing in Formula SAE.
             </p>
             <img src="img/pre-logo-white.png" alt="princeton racing electric logo" class="intro__row--img">
@@ -191,7 +193,7 @@
         </div>
 
         <div class="intro__resume">
-          <a href="#" class="btn">Resume</a>
+          <a href="portfolio/Wang_Harvey_Resume.pdf" download="Harvey_Wang_Resume" class="btn">Resume</a>
         </div>
 
       </div>
@@ -200,69 +202,141 @@
 
     <!-- Skills -->
     <section class="my-skills" id="skills">
-      <h2 class="section__title section__title--skills">Skills</h2>
+      <div class="section__bg skills__bg">
+        <img src="img/earth_dark.jpg" class="bg__img skills__bg-img" alt="eclipse">
+      </div>
+
+      <div class="section__body skills__body">
+        <h2 class="section__title section__title--skills">Skills</h2>
       
-      <div class="skills">
-        <div class="skills__name"></div>
-        <div class="skills__grid">
-          <div class="skills__circle circle-python" data-text="Python" data-color="rgba(255,207,63,1)">
-            <img src="icons/python.svg" alt="python icon" class="skills__icon icon-python">
-          </div>
-          <div class="skills__circle circle-java" data-text="Java" data-color="rgba(226,49,48,1)">
-            <img src="icons/java.svg" alt="java icon" class="skills__icon icon-java">
-          </div>
-          <div class="skills__circle circle-c" data-text="C" data-color="rgba(2,89,156,1)">
-            <img src="icons/c.svg" alt="c icon" class="skills__icon icon-c">
-          </div>
-          <div class="skills__circle circle-r" data-text="R" data-color="rgba(33,101,182,1)">
-            <img src="icons/r.svg" alt="r icon" class="skills__icon icon-r">
-          </div>
-          <div class="skills__circle circle-html" data-text="HTML" data-color="rgba(228,77,38,1)">
-            <img src="icons/html5.svg" alt="html icon" class="skills__icon icon-html">
-          </div>
-          <div class="skills__circle circle-css" data-text="CSS" data-color="rgba(18,114,182,1)">
-            <img src="icons/css3.svg" alt="css icon" class="skills__icon icon-css">
-          </div>
-          <div class="skills__circle circle-javascript" data-text="JavaScript" data-color="rgba(240,191,46,1)">
-            <img src="icons/javascript.svg" alt="javascript icon" class="skills__icon icon-javascript">
-          </div>
-          <div class="skills__circle circle-node-js" data-text="NodeJS" data-color="rgba(132,203,44,1)">
-            <img src="icons/node-js.svg" alt="node-js icon" class="skills__icon icon-node-js">
-          </div>
-          <div class="skills__circle circle-react" data-text="React" data-color="rgba(96,218,252,1)">
-            <img src="icons/react.svg" atl="react icon" class="skills__icon icon-react">
-          </div>
-          <div class="skills__circle circle-matlab" data-text="MATLAB" data-color="rgba(157,65,206,1)">
-            <img src="icons/matlab.svg" alt="matlab icon" class="skills__icon icon-matlab">
-          </div>
-          <div class="skills__circle circle-postgresql" data-text="SQL" data-color="rgba(50,103,145,1)">
-            <img src="icons/postgresql.svg" alt="postgresql icon" class="skills__icon icon-postgresql">
-          </div>
-          <div class="skills__circle circle-git" data-text="Git" data-color="rgba(243,79,41,1)">
-            <img src="icons/git.svg" alt="git icon" class="skills__icon icon-git">
-          </div>
-          <div class="skills__circle circle-swift" data-text="Swift" data-color="rgba(255,87,38,1)">
-            <img src="icons/swift.svg" alt="swift icon" class="skills__icon icon-swift">
-          </div>
-          <div class="skills__circle circle-firebase" data-text="Firebase" data-color="rgba(251,202,63,1)">
-            <img src="icons/firebase.svg" alt="firebase icon" class="skills__icon icon-firebase">
+        <div class="skills">
+          <div class="skills__name"></div>
+          <div class="skills__grid">
+            <div class="skills__circle circle-python" data-text="Python" data-color="rgba(255,207,63,1)">
+              <img src="icons/python.svg" alt="python icon" class="skills__icon icon-python">
+            </div>
+            <div class="skills__circle circle-java" data-text="Java" data-color="rgba(226,49,48,1)">
+              <img src="icons/java.svg" alt="java icon" class="skills__icon icon-java">
+            </div>
+            <div class="skills__circle circle-c" data-text="C" data-color="rgba(2,89,156,1)">
+              <img src="icons/c.svg" alt="c icon" class="skills__icon icon-c">
+            </div>
+            <div class="skills__circle circle-r" data-text="R" data-color="rgba(33,101,182,1)">
+              <img src="icons/r.svg" alt="r icon" class="skills__icon icon-r">
+            </div>
+            <div class="skills__circle circle-html" data-text="HTML" data-color="rgba(228,77,38,1)">
+              <img src="icons/html5.svg" alt="html icon" class="skills__icon icon-html">
+            </div>
+            <div class="skills__circle circle-css" data-text="CSS" data-color="rgba(18,114,182,1)">
+              <img src="icons/css3.svg" alt="css icon" class="skills__icon icon-css">
+            </div>
+            <div class="skills__circle circle-javascript" data-text="JavaScript" data-color="rgba(240,191,46,1)">
+              <img src="icons/javascript.svg" alt="javascript icon" class="skills__icon icon-javascript">
+            </div>
+            <div class="skills__circle circle-node-js" data-text="NodeJS" data-color="rgba(132,203,44,1)">
+              <img src="icons/node-js.svg" alt="node-js icon" class="skills__icon icon-node-js">
+            </div>
+            <div class="skills__circle circle-react" data-text="React" data-color="rgba(96,218,252,1)">
+              <img src="icons/react.svg" atl="react icon" class="skills__icon icon-react">
+            </div>
+            <div class="skills__circle circle-matlab" data-text="MATLAB" data-color="rgba(157,65,206,1)">
+              <img src="icons/matlab.svg" alt="matlab icon" class="skills__icon icon-matlab">
+            </div>
+            <div class="skills__circle circle-postgresql" data-text="SQL" data-color="rgba(50,103,145,1)">
+              <img src="icons/postgresql.svg" alt="postgresql icon" class="skills__icon icon-postgresql">
+            </div>
+            <div class="skills__circle circle-git" data-text="Git" data-color="rgba(243,79,41,1)">
+              <img src="icons/git.svg" alt="git icon" class="skills__icon icon-git">
+            </div>
+            <div class="skills__circle circle-swift" data-text="Swift" data-color="rgba(255,87,38,1)">
+              <img src="icons/swift.svg" alt="swift icon" class="skills__icon icon-swift">
+            </div>
+            <div class="skills__circle circle-firebase" data-text="Firebase" data-color="rgba(251,202,63,1)">
+              <img src="icons/firebase.svg" alt="firebase icon" class="skills__icon icon-firebase">
+            </div>
           </div>
         </div>
+  
+        <div class="courses">
+          <h2 class="section__title--skills">Courses</h2>
+          <!-- <ul class="courses__list">
+            <li>Principles of Computer System Design</li>
+            <li>Economics and Computing</li>
+            <li>Introduction to Machine Learning</li>
+            <li>Advanced Programming Techniques</li>
+            <li>Algorithms and Data Structures</li>
+            <li>Introduction to Programming Systems</li>
+          </ul> -->
+        </div>
+
+        <div class="periodic-table">
+          <div class="empty-spacer-1"></div>
+
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">226</div>
+              <div class="description">Data Structures & Algs.</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">217</div>
+              <div class="description">Programming Systems</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">333</div>
+              <div class="description">Adv. Programming Techniques</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">324</div>
+              <div class="description">Intro to Machine Learning</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">445</div>
+              <div class="description">Economics & Computing</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">316</div>
+              <div class="description">Computer System Design</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">201</div>
+              <div class="description">Intro to Data Science</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">306</div>
+              <div class="description">ML with Social Data</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">455</div>
+              <div class="description">Genomics and Comp. Biology</div>
+            </div>
+          </div>
+          <div class="periodic-element">
+            <div class="periodic-element-inner">
+              <div class="title">426</div>
+              <div class="description">Computer Graphics</div>
+            </div>
+          </div>
+        </div>
+  
+        <a href="#work" class="btn">My Work</a>
       </div>
 
-      <div class="courses">
-        <h2>Courses</h2>
-        <ul class="courses__list">
-          <li>Principles of Computer System Design</li>
-          <li>Economics and Computing</li>
-          <li>Introduction to Machine Learning</li>
-          <li>Advanced Programming Techniques</li>
-          <li>Algorithms and Data Structures</li>
-          <li>Introduction to Programming Systems</li>
-        </ul>
-      </div>
-
-      <a href="#work" class="btn">My Work</a>
     </section>
 
 
@@ -429,7 +503,8 @@
       
       let skills_list = document.querySelectorAll(".skills__circle");
       let skills_name = document.querySelector(".skills__name");
-      let bg = document.querySelector(".my-skills");
+      let bg = document.querySelector(".skills__bg");
+      console.log(bg);
 
       skills_list.forEach(elements => {
         elements.addEventListener('mouseover', function(skill) {
@@ -467,11 +542,11 @@
               curSlide.vanillaTilt.addEventListeners();
             } else {
               VanillaTilt.init(curSlide, {
-                max: 10,
+                max: 2,
                 speed: 700,
                 perspective: 1500,
                 glare: true,
-                "max-glare": 0.4
+                "max-glare": 0.25
               });
             }
           }
