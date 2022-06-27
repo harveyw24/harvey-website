@@ -1076,6 +1076,7 @@ h3 { font-size: var(--fs-h3); }
 .circle-java:hover { background: rgba(226,49,48,.8); }
 .circle-c:hover { background: rgba(2,89,156,.8); }
 .circle-r:hover { background: rgba(33,101,182,.8); }
+.circle-go:hover { background: rgba(3,171,216,1); }
 .circle-html:hover { background: rgba(228,77,38,.8); }
 .circle-css:hover { background: rgba(18,114,182,.8); }
 .circle-javascript:hover { background: rgba(240,191,46,.8); }
@@ -1308,16 +1309,20 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .swiper-slide-1::before {
-    background-image: url(../portfolio/portfolio-01.png);
+    background-image: url(../portfolio/portfolio-website.png);
 }
 .swiper-slide-2::before {
-    background-image: url(../portfolio/portfolio-02.png);
+    background-image: url(../portfolio/portfolio-noww.png);
 }
 .swiper-slide-3::before {
-    background-image: url(../portfolio/portfolio-03.png);
+    background-image: url(../portfolio/portfolio-glider.png);
 }
 .swiper-slide-4::before {
-    background-image: url(../portfolio/portfolio-04.png);
+    background-image: url(../portfolio/portfolio-hms.png);
+}
+
+.swiper-slide-5::before {
+    background-image: url(../portfolio/portfolio-htt.png);
 }
 
 .swiper-slide:hover::before {
