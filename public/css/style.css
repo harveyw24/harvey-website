@@ -733,13 +733,13 @@ h3 { font-size: var(--fs-h3); }
     margin-top: 2rem;
 }
 
-.about__header {
+/* .about__header {
     display: grid;
     grid-template-columns: 75% 25%;
     grid-template-areas:
         "title img"
         "p img";
-}
+} */
 
 .section__title--about {
     grid-area: title;
@@ -1137,8 +1137,12 @@ h3 { font-size: var(--fs-h3); }
 
 @media (min-width: 1000px) {
     .empty-spacer-1 {
-        grid-column: 2 / span 2;
+        grid-column: 2 / span 3;
         grid-row: 1;
+    }
+    .empty-spacer-2 {
+        grid-column: 3 / span 1;
+        grid-row: 4;
     }
 }
 
@@ -1195,33 +1199,33 @@ h3 { font-size: var(--fs-h3); }
     -webkit-text-fill-color: #222; 
 }
 
-.periodic-cos {
+.periodic-systems {
     background-image: linear-gradient(to bottom right, #598bc8, #8ad5d8);
 }
 
-.periodic-cos .description, .periodic-cos .title {
+.periodic-systems .description, .periodic-systems .title {
     background: linear-gradient(to bottom right, #598bc8, #8ad5d8);
     -webkit-text-fill-color: transparent;
     background-clip: border-box;
     -webkit-background-clip: text;
 }
 
-.periodic-sml {
+.periodic-applications {
     background-image: linear-gradient(to bottom right, #ff616d,#ffc171);
 }
 
-.periodic-sml .description, .periodic-sml .title {
+.periodic-applications .description, .periodic-applications .title {
     background: linear-gradient(to bottom right, #ff616d,#ffc171);
     -webkit-text-fill-color: transparent;
     background-clip: border-box;
     -webkit-background-clip: text;
 }
 
-.periodic-other {
+.periodic-theory {
     background-image: linear-gradient(to bottom right, #58ac30,#a7df62);
 }
 
-.periodic-other .description, .periodic-other .title {
+.periodic-theory .description, .periodic-theory .title {
     background: linear-gradient(to bottom right, #58ac30,#a7df62);
     -webkit-text-fill-color: transparent;
     background-clip: border-box;
@@ -1263,6 +1267,11 @@ h3 { font-size: var(--fs-h3); }
     background-position: center;
     background-size: cover;
     color: var(--clr-light);
+}
+
+.my-work-body {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .swiper {
@@ -1309,7 +1318,7 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .swiper-slide-1::before {
-    background-image: url(../portfolio/portfolio-website.png);
+    background-image: url(../portfolio/portfolio-iw.jpg);
 }
 .swiper-slide-2::before {
     background-image: url(../portfolio/portfolio-noww.png);
@@ -1320,9 +1329,11 @@ h3 { font-size: var(--fs-h3); }
 .swiper-slide-4::before {
     background-image: url(../portfolio/portfolio-hms.png);
 }
-
 .swiper-slide-5::before {
     background-image: url(../portfolio/portfolio-htt.png);
+}
+.swiper-slide-6::before {
+    background-image: url(../portfolio/portfolio-website.png);
 }
 
 .swiper-slide:hover::before {
