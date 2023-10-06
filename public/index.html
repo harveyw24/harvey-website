@@ -574,7 +574,10 @@
       </ul>
     </footer>
 
-
+    <!-- Loader -->
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span>
+    </div>
 
 
     <!-- Scripts -->
@@ -585,6 +588,12 @@
 
 
     <script>
+      // Loader
+      var loader = document.querySelector(".loader-wrapper");
+      window.addEventListener("load", function() {
+        // loader.style.display = "none";
+      });
+
       // Navbar
       var prevScrollTop = 0;
       var navbar = document.querySelector(".nav2");
@@ -596,7 +605,7 @@
           navbar.style.transform="translateY(0)";
         }
         prevScrollTop = scrollTop;
-      })
+      });
 
 
       // Lander
@@ -604,7 +613,6 @@
       document.documentElement.style.setProperty("--typer1-len", lander1.textContent.length)
       let lander2 = document.querySelector(".lander__option-2");
       document.documentElement.style.setProperty("--typer2-len", lander2.textContent.length)
-      console.log(lander1.textContent.length)
 
       // Skills circles
       VanillaTilt.init(document.querySelectorAll(".skills__circle"), {
@@ -617,7 +625,6 @@
       let skills_list = document.querySelectorAll(".skills__circle");
       let skills_name = document.querySelector(".skills__name");
       let bg = document.querySelector(".skills__bg");
-      console.log(bg);
 
       skills_list.forEach(elements => {
         elements.addEventListener('mouseover', function(skill) {
