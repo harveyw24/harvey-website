@@ -1333,7 +1333,7 @@ h3 { font-size: var(--fs-h3); }
     background-image: url(../portfolio/portfolio-htt.png);
 }
 .swiper-slide-6::before {
-    background-image: url(../portfolio/portfolio-website.png);
+    background-image: url(../portfolio/portfolio-website-min.png);
 }
 
 .swiper-slide:hover::before {
